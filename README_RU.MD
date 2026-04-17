@@ -3,6 +3,7 @@
 ### macOS Sequoia • macOS Tahoe • macOS Big Sur
 
 > 📌 Это русская версия README
+
 > 🇺🇸 English version: [README.md](README.md)
 
 ---
