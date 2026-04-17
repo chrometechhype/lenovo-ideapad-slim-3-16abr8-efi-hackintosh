@@ -3,7 +3,7 @@
 > 📌 This is the English version of the README.
 
 >🇷🇺 Русская версия доступна здесь: [README_RU.md](README_RU.MD)
-
+[WARNING!] FOR BIG SUR, THE EFI IS COMPLETELY DIFFERENT! THIS INFORMATION APPLIES ONLY TO SEQUOIA AND TAHOE! (FOR BIG SUR, MOST THINGS ARE SIMILAR)
 
 ---
 
