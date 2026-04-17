@@ -1,4 +1,4 @@
-🇷🇺 README — EFI для Lenovo IdeaPad Slim 3 16ABR8 (macOS Tahoe и macOS Sequioa)
+🇷🇺 README — EFI для Lenovo IdeaPad Slim 3 16ABR8 (macOS Tahoe, macOS BigSur и macOS Sequioa)
 
 > 📌 Это русская версия файла README.
 
