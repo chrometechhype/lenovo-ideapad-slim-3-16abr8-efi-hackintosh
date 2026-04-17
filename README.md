@@ -1,103 +1,107 @@
-🇬🇧 README — EFI for Lenovo IdeaPad Slim 3 16ABR8 (macOS Tahoe, macOS BigSur and macOS Sequioa)
+# 🇬🇧 EFI for Lenovo IdeaPad Slim 3 16ABR8
 
-> 📌 This is the English version of the README.
+### macOS Sequoia • macOS Tahoe • macOS Big Sur
 
->🇷🇺 Русская версия доступна здесь: [README_RU.md](README_RU.MD)
-
-[WARNING!] FOR BIG SUR, THE EFI IS COMPLETELY DIFFERENT! THIS INFORMATION APPLIES ONLY TO SEQUOIA AND TAHOE! (FOR BIG SUR, MOST THINGS ARE SIMILAR)
-
----
-
-💻 Laptop specifications:
-
-Model: Lenovo IdeaPad Slim 3 16ABR8
-
-CPU: AMD Ryzen 7 7730U (Zen 2)
-
-Graphics: AMD Radeon Vega 8
-
-Audio: Realtek ALC257 ✅
-
-Camera: Built-in ✅
-
-Wi-Fi / Bluetooth: MediaTek MT7921 ❌
-
-Bootloader: OpenCore 1.0.5
-
-Supported macOS: macOS Sequioa (15.x) macOS Tahoe (26.x)
-
-
+> 📌 This is the English version of the README
+> 🇷🇺 Russian version: [README_RU.md](README_RU.md)
 
 ---
 
-🧩 Included SSDTs:
+## ⚠️ Important Notice
 
-SSDT-ALS0
-
-SSDT-Disable_Network_GPP4
-
-SSDT-EC
-
-SSDT-PLUG-ALT
-
-SSDT-PNLF
-
-SSDT-RMNE
-
-SSDT-USB-Reset
-
-SSDT-USBX
-
-SSDT-XOSI
-
-
+**The EFI for macOS Big Sur is completely different.**
+This configuration is intended for **macOS Sequoia and Tahoe only**.
+(Big Sur setup may share similarities, but requires a separate EFI.)
 
 ---
 
-✅ What works:
+## 💻 Laptop Specifications
 
-Full hardware graphics acceleration (Vega 8)
+* **Model:** Lenovo IdeaPad Slim 3 16ABR8
+* **CPU:** AMD Ryzen 7 7730U (Zen 2)
+* **GPU:** AMD Radeon Vega 8
+* **Audio:** Realtek ALC257
+* **Camera:** Built-in
+* **Wi-Fi / Bluetooth:** MediaTek MT7921 (not supported)
+* **Bootloader:** OpenCore 1.0.5
 
-Audio (via alcid=11)
+### 🖥 Supported macOS
 
-Built-in camera
-
-USB ports 
-
-Smooth interface and animations
-
-Stable installation and boot process
-
-
-
----
-
-⚠️ What does not work:
-
-❌ Wi-Fi and Bluetooth are not supported — MediaTek MT7921 is not macOS-compatible
-
-Notes: Internet access is available only via USB tethering from a phone
-The required HoRNDIS.kext is already included in this EFI
-
+* macOS Sequoia (15.x)
+* macOS Tahoe (26.x)
 
 ---
 
-⚙️ Boot arguments (NVRAM boot-args):
+## 🧩 Included SSDTs
+
+* SSDT-ALS0
+* SSDT-Disable_Network_GPP4
+* SSDT-EC
+* SSDT-PLUG-ALT
+* SSDT-PNLF
+* SSDT-RMNE
+* SSDT-USB-Reset
+* SSDT-USBX
+* SSDT-XOSI
+
+---
+
+## ✅ Working
+
+* Full graphics acceleration (Vega 8)
+* Audio *(limited, see notes below)*
+* Built-in camera
+* USB ports
+* Smooth UI and animations
+* Stable installation and boot
+
+---
+
+## ⚠️ Not Working
+
+* ❌ Wi-Fi / Bluetooth (MediaTek MT7921 is not supported in macOS)
+
+### 📌 Notes
+
+* Internet is available via **USB tethering**
+* HoRNDIS.kext is included in this EFI
+
+---
+
+## 🔊 Audio Status (Important)
+
+* Audio works **only in early macOS Tahoe beta builds**
+* Broken in newer versions (likely due to AppleHDA changes)
+* Not yet fully fixed
+
+---
+
+## ⚙️ Boot Arguments
+
 ```
 -v debug=0x100 keepsyms=1 npci=0x3000 -vi2c-force-polling alcid=11 revpatch=sbvmm amfi_get_out_of_my_way=1
 ```
 
 ---
 
-📁 EFI structure:
+## 📁 EFI Structure
+
 ```
 EFI
 ├── BOOT
 │   └── BOOTx64.efi
 └── OC
-  ├── ACPI
-  ├── Drivers
-  ├── Kexts
-  ├── Tools
-  ├── config.plist
-  └── OpenCore.efi
+    ├── ACPI
+    ├── Drivers
+    ├── Kexts
+    ├── Tools
+    ├── config.plist
+    └── OpenCore.efi
+```
+
+---
+
+## ⚠️ Disclaimer
+
+This EFI is provided for educational purposes only.
+Use at your own risk. No guarantees of full compatibility.
